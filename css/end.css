@@ -1,0 +1,56 @@
+/* End Game Text */
+#text{
+    /* Padding for visibility */
+    padding: 1% 5% 1% 5%; 
+
+    /* Round Corners */
+    border-radius: 20px;
+    
+    /* Positioning */
+    position: absolute; 
+    top: 25%; 
+
+    /* Size */
+    width: 80%; 
+    height: min-content; 
+    
+    /* Backround Colour */
+    background-color: white; 
+
+    /* Text Sizing and Positioning */   
+    font-size: calc(2vw + 2vh); 
+    text-align: center;
+    text-wrap: wrap;
+    
+    /* Custom font */
+    font-family: undertale; 
+}
+
+/* Play again button */
+#play_again {
+    /* Positioning */
+    position: absolute; 
+    bottom: 25%; 
+
+    /* Remove default button border */
+    border: none;
+
+    /* sizing */
+    width: 33vw;
+    height: 8vw;
+
+    /* Set Background */
+    background-image: url("../images/play_again.webp");
+    background-size: 100%;
+
+    /* animation speeds */
+    transition: width 0.2s, height 0.2s, bottom 0.2s;
+}
+
+
+/* Play again hover animation */
+#play_again:hover {
+    width: 36vw;
+    height: 8.8vw;
+    bottom: calc(25% - 0.4vh);
+}

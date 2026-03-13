@@ -1,0 +1,294 @@
+body {
+
+  /* Background Setup */
+  background-image: url("../images/bg_game.png");
+  background-size: auto 100%;
+  background-position: center;
+  
+  /* Disable Text Select */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  
+
+  /* Sizing */
+  min-width: 80vh;
+  min-height: 40vw;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+}
+
+/* Page Content Container (for styling) */
+#page {
+  /* Positioning */
+  display: flex;
+  padding: 10px;
+
+  /* Size */
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+}
+
+/* Home button */
+#home {
+  /* Background Setup */
+  background-image: url("../images/home.png");
+  border: none; 
+  background-color: rgba(0, 0, 0, 0);
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  /* Size */
+  width: 70px;
+  height: 70px;
+
+  /* Position */
+  margin-right: 10px;
+  
+  /* Animation Speeds */
+  transition: width 0.2s, height 0.2s, margin 0.2s;
+}
+
+
+/* Home button hover Animation */
+#home:hover {
+  width: 80px;
+  height: 80px;
+  margin: -5px 5px 5px -5px;
+  cursor: pointer;
+}
+
+/* Container for all non-homeButton interactable items */
+#interactions {
+  /* Position */
+  display: flex;
+  flex-direction: column-reverse;
+
+  /* Size */
+  height: 100%;
+  width: 60%;
+}
+
+/* Bandit Character */
+#bandit {
+  /* Animation speed */
+  transition: background-size 0.4s;
+
+  /* Sprite Setup */
+  background-image: url("../images/bandit.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+
+  /* position */
+  align-self: baseline;
+
+  /* Size */
+  height: 100%;
+  width: 40%;
+}
+
+/* Question Box Container (positioning purposes) */
+#query {
+  /* Positioning */
+  display: flex;
+  justify-content: right;
+
+  /* Size */
+  width: 100%;
+  height: 100%;
+}
+
+/* Question Box (question + back arrow) */
+#question {
+  /* Positioning */
+  display: flex;
+
+  /* Sizing */
+  height: 100%;
+  width: 100%;
+
+  /* Background Setup */
+  image-rendering: pixelated;
+  background-image: url("../images/text.webp");
+  background-size: 101% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Question Container (for styling) */
+#quint {
+  /* Positioning */
+  align-self: center;
+  justify-self: center;
+  padding: 20px;
+
+  /* Text setup and Animation Speed */
+  transition: font-size 0.4s;
+  font-family: undertale;
+  font-weight: bold;
+  text-align: center;
+  font-size: 6vh;
+
+  /* Sizing */
+  width: 100%;
+  max-width: 100%;
+  
+}
+
+/* Answers Container (styling purposes) */
+#ans {
+
+  /* Positioning */
+  align-self: flex-start;
+  margin-right: 20px;
+  
+  /* Curved Border */
+  border-radius: 10px;
+
+  /* Size */
+  height: 75%;
+  width: 100%;
+  
+  /* Setting Background */
+  background-color: rgba(89, 122, 0, 0.84);
+}
+
+/* Importing Custom Font */
+@font-face {
+  font-family: undertale;
+  src: url(../font/font.ttf);
+}
+
+/* Answer Options */
+.answer {
+  /* Positioning */
+  position: relative;
+  align-items: center;
+  left: 0px;
+  display: flex;
+
+  /* Animations Speed */
+  transition: font-size 0.4s, left 0.4s;
+
+  /* Size */
+  width: 100%;
+  height: 20%;
+
+  /* Custom font */
+  font-family: undertale;
+  font-size: 5.7vw;
+  font-weight: bold;
+  
+}
+
+/* Answer Option hover animation */
+.answer:hover {
+  font-size: 6.7vw;
+  cursor: pointer;
+  
+  padding: 0px;
+  left: 10px;
+}
+
+/* Back Arrow */
+#back {
+  /* Animation speed */
+  transition: rotate 0.2s;
+
+  /* Size and Position */
+  padding-left: 20px; 
+  margin-top: 15px; 
+  width: 40px; 
+  height: 40px;
+}
+
+/* Animate Back arrow on hover */
+#back:hover {
+  rotate: 7deg;
+  cursor:pointer;
+}
+
+/* Answer Arrows */
+.arrow {
+  /* Animation speed */
+  transition: height 0.4s;
+
+  /* Positioning */
+  padding-left: 20px;
+  padding-right: 20px;
+
+  /* Size */
+  height: 50%;
+
+  /* Pixelated */
+  image-rendering: pixelated;
+}
+
+
+/* Repositioning/Resizing on set window size */
+@media (max-width:140vh) {
+  #bandit {
+    background-size: 41vmax 100%;
+  }
+
+  .arrow {
+    height: 40%;
+  }
+
+  .answer {
+    font-size: 5vw;
+    
+  }
+  .answer:hover {
+    font-size: 6vw;
+    cursor: pointer;
+  }
+
+  #back{
+    padding-left: 20px; 
+    margin-top: 15px; 
+    width: 35px; 
+    height: 35px;
+  }
+  
+  #quint {
+    font-size: 4vh;
+  }
+}
+
+
+/* Resizing/Repositioning on set window size */
+@media (max-width:99vh) {
+  #bandit {
+    background-size: 35vmax 100%;
+
+    /* Change Bandit Character to Squished Bandit */
+    background-image: url("../images/bandit_squish.png");
+  }
+  #back{
+    padding-left: 20px; 
+    margin-top: 15px; 
+    width: 25px; 
+    height: 25px;
+  }
+
+  .arrow {
+    height: 40%;
+  }
+
+  .answer {
+    font-size: 4vw;
+  }
+  .answer:hover {
+    font-size: 5vw;
+    cursor: pointer;
+  }
+
+  #quint {
+    font-size: 3vh;
+  }
+}

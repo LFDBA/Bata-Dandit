@@ -1,1 +1,59 @@
-hello
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bata Dandit</title>
+
+  <!-- CSS link -->
+  <link href="css/home.css" rel="stylesheet">
+
+  <!-- JS Link -->
+  <script src="js/play.js"></script>
+
+  
+</head>
+
+<body id="vignette">
+
+  <!-- Handy disclaimer -->
+  <p>Due to new Autoplay policy, you must click the page before sound effects can play</p>
+
+  <!-- Buttons (play hover sound on hover. Redirect to set pagge when pressed) -->
+  <!-- Play -->
+  <img onmouseenter="play('audio/hover.wav')" src="images/play.webp" id="play" onclick="window.location.replace('intro.html')" alt="play">
+
+  <!-- View Data -->
+  <img onmouseenter="play('audio/hover.wav')" onclick="window.location.replace('data.html')" src="images/perv.webp" id="view" alt="view data">
+
+  <!-- About Us -->
+  <img onmouseenter="play('audio/hover.wav')" src="images/abt_us.webp" id="about" onclick="window.location.replace('about.html')" alt="about us">
+
+  <!-- Quit Button Container (for animation) -->
+  <div id="q_div" style="display: flex; flex-direction: column; height: 100px; width: 200px; align-items: center; justify-content:center;" onmouseenter="play('audio/wheredoyoulive.wav'); vignette(); " onmouseleave="oV()">
+    <!-- Quit Button (custom spooky sound plays) -->
+    <img src="images/dont_ever.webp" id="quit" onclick="if(confirm('Dont think you can escape me for good...') == true){
+      let count = 0
+
+      //If page is opened directly from file, the close function will work (close function is preferred over back, stylistically)
+      window.close()
+
+      //All redirects are replaces, so going back should send user to new tab page, but it's in a while loop just incase
+      while(count < 10){
+        window.history.back(); 
+        count++
+      }
+
+      //Failed to quit
+      alert('Sorry pal, there was an error quiting')
+      
+      }else{return}" alt="quit">
+      
+  </div>
+
+
+
+</body>
+
+</html>

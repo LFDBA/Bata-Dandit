@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bata Dandit</title>
+    <!-- CSS links -->
+    <link href="css/intro.css" rel="stylesheet">
+    <link href="css/end.css" rel="stylesheet">
+
+    <!-- JS link -->
+    <script src="js/play.js"></script>
+</head>
+
+<body>
+
+    <!-- Home Button -->
+    <button id="home" onclick="window.location.replace('index.html')"></button>
+
+    <!-- End Game Text -->
+    <div id="text"></div>
+    
+    <!-- Word animations -->
+    <script>
+        let words = "...\nWell...\u2009It\u2009looks\u2009like\u2009I\u2009lost.\u2009Partner.\u2009Play\u2009again.\u2009Or\u2009Else..."
+        let i = 0
+        let time = 70
+
+        function type(){
+            if(i < words.length){
+                if(words[i] == "."){
+                    time = 360
+                }else if(words[i] == ","){
+                    time = 200
+                }else if(i < 68 && i > 62){
+                    time = 400
+                }else{
+                    time = 70
+                }
+                document.getElementById("text").innerText += words[i]
+                play("audio/typing.mp3")
+
+                setTimeout("type()", time)
+                i++
+            }
+        }
+        type()
+    </script>
+
+    <!-- Play Again button -->
+    <button id="play_again" onclick="window.location.replace('game.html')"></button>
+</body>
+</html>

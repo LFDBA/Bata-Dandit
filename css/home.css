@@ -1,0 +1,222 @@
+body {
+  /* Set Backround image */
+  background-image: url('../images/bg_main.png');
+  background-size: auto 100%;
+  image-rendering: pixelated;
+  background-position: center;
+
+  /* Custom font */
+  font-family: undertale;
+
+  /* Text positioning */
+  text-align: center;
+
+  /* Body sizing and Positioning */
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  /* No Text select or image dragging */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* All buttons */
+img {
+  /* Animation speed */
+  transition: height 0.4s;
+
+  /* Size */
+  height: 100px;
+  width: auto;
+
+  /* Pixelate Image */
+  image-rendering: pixelated;
+}
+
+
+/* Play sign hover animation */
+#play:hover {
+  cursor: pointer;
+  height: 125px;
+}
+
+/* View data sign hover animation */
+#view:hover {
+  cursor: pointer;
+  height: 125px;
+}
+
+/* About Us sign hover animation */
+#about:hover {
+  cursor: pointer;
+  height: 125px;
+}
+
+/* On Quit container hovered (so that the event doesn't untrigger when the quit button is resized) */
+#q_div:hover #quit{
+
+  /* Funny cursor styling easter egg */
+  cursor: grab; 
+
+  /* Play shake animation, until unhover */
+  animation: shake 0.5s; 
+  animation-iteration-count: infinite;
+
+  height: 65px; 
+  
+}
+
+/* Importing Custom Font */
+@font-face {
+  font-family: undertale;
+  src: url(../font/font.ttf);
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+/* Vignette Animation */
+@keyframes vignette {
+  0% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0);
+  }
+
+  10% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.08);
+  }
+
+  20% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.16);
+  }
+
+  30% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.24);
+  }
+
+  40% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.32);
+  }
+
+  50% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.40);
+  }
+
+  60% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.48);
+  }
+
+  70% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.56);
+  }
+
+  80% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.64);
+  }
+
+  90% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.72);
+  }
+
+  100% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Unvignette Animation */
+@keyframes unvig {
+  0% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.8);
+  }
+
+  10% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.72);
+  }
+
+  20% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.64);
+  }
+
+  30% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.56);
+  }
+
+  40% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.48);
+  }
+
+  50% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.40);
+  }
+
+  60% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.32);
+  }
+
+  70% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.24);
+  }
+
+  80% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.16);
+  }
+
+  90% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.08);
+  }
+
+  100% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0);
+  }
+}

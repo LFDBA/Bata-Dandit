@@ -1,0 +1,397 @@
+/* body setup */
+body {
+  /* Set background image to coolio Igor made background sprite :) */
+  background-image: url('../images/bg_main.png');
+  background-size: auto 100%;
+  image-rendering: pixelated;
+  background-position: center;
+
+  /* body & content sizing and positioning */
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  /* No text selecting because that's really annoying (image dragging disble didn't work) */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+  -moz-user-select: none;
+  -o-user-select: none;
+
+}
+
+/* Page content container sizing and content positioning */
+#content {
+  width: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* Bandit Character */
+#bandit {
+  /* content positioning */
+  display: flex;
+  justify-content: space-between;
+
+  /* Adding Bandit Sprite :) */
+  background-position: bottom;
+  background-image: url("../images/intro_bandit.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  /* Bandit size */
+  width: 100%;
+  height: 100%;
+}
+
+/* Yes sign container (for animation purposes) */
+#yes_box {
+  
+  /* Positioning things */
+  transform: translate(-50%, 0);
+  position: relative;
+  left: 9vh;
+  top: calc(50%);
+  width: 20vh;
+  height: min-content;
+  
+  /* removing yucky button things */
+  background: none;
+  border: none;
+}
+
+/* Hover animations */
+#yes_box:hover {
+
+  /* animation speeds */
+  transition: width 0.4s, left 0.4s, right 0.4s, top 0.4s;
+
+  /* change cursor type to pointer */
+  cursor: pointer;
+
+  /* Resize */
+  width: 22vh;
+
+  /* Reposition */
+  top: calc(50% - 2vh);
+}
+
+
+
+/* No sign container (for animation purposes) */
+#no_box {
+
+  /* Positioning things */
+  transform: translate(50%, 0.65vh);
+  position: relative;
+  right: 9vh;
+  top: calc(50%);
+  width: 20vh;
+  height: min-content;
+
+  /* removing yucky button stuff */
+  background: none;
+  border: none;
+}
+
+#no_box:hover {
+
+  /* animation speeds */
+  transition: width 0.4s, left 0.4s, right 0.4s, top 0.4s;
+
+  /* change cursor style */
+  cursor: pointer;
+
+  /* Resize */
+  width: 22vh;
+
+  /* Reposition */
+  top: calc(50% - 2vh);
+}
+
+
+
+/* Yes sign sprite */
+#yes {
+  width: 100%;
+}
+
+
+/* No sign sprite */
+#no {
+  width: 100%;
+}
+
+
+/* Question Text */
+#text {
+  /* Just positioning stuff */
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  bottom: 20px;
+}
+
+
+
+
+
+/* Question container (for sprite and positioning) */
+#query_box{
+
+  /* Content positioning */
+  display: flex; 
+  justify-content: center;
+
+  /* Set Background */
+  background-image: url('../images/intro_txt.png'); 
+  background-size: 100% 100%; 
+  background-repeat: no-repeat; 
+
+  /* Fit question text */
+  height: min-content; 
+  width: 100%; 
+}
+
+/* question */
+#query{  
+
+  /* Positioning */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 10px;
+
+  /* Set font styles */
+  font-size: 10vh;
+  font-family: undertale; 
+  font-weight:normal; 
+
+  /* Align text so that it actually looks decent */
+  text-align: center;
+}
+
+/* Home Button */
+#home {
+  /* Positioning */
+  position: absolute;
+  left: 2vh;
+  top: 2vh;
+
+  /* Set Background */
+  background-image: url("../images/home.png");
+  filter: invert(100%); 
+  border: none; 
+  background-color: rgba(0, 0, 0, 0);
+  image-rendering: pixelated;
+
+  /* Sizing */
+  width: 8vh;
+  height: 8vh;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  /* Animation speeds */
+  transition: width 0.2s, height 0.2s, margin 0.2s;
+}
+
+/* Home Hover Animation */
+#home:hover {
+  width: 10vh;
+  height: 10vh;
+  margin: -1vh 1vh 1vh -1vh;
+  cursor: pointer;
+}
+
+
+/* Resizing/Repositioning for set window sizes */
+@media only screen and (max-width: 100vh) {
+  #yes_box {
+    transform: translate(-50%, 0);
+    background: none;
+    border: none;
+    position: relative;
+    left: 9vw;
+    top: calc(50% + (50vh - 50vw));
+    /* background-image: url("yes.webp"); */
+    width: 20vw;
+    height: min-content;
+  }
+  
+  #no_box {
+    transform: translate(50%, 0.65vw);
+    background: none;
+    border: none;
+    position: relative;
+    right: 9vw;
+    top: calc(50% + (50vh - 50vw));
+    /* background-image: url("no.webp"); */
+    width: 20vw;
+    height: min-content;
+  
+  }
+  #query{  
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 10px;
+    font-size: 10vw;
+    font-family: undertale; 
+    font-weight:normal; 
+    text-align: center;
+  }
+  #yes_box:hover {
+    transition: width 0.4s, left 0.4s, right 0.4s, top 0.4s;
+    cursor: pointer;
+    width: 22vw;
+  
+    top: calc(50% + (50vh - 50vw) - 2vw);
+  }
+  
+  #no_box:hover {
+    transition: width 0.4s, left 0.4s, right 0.4s, top 0.4s;
+    cursor: pointer;
+    width: 22vw;
+  
+    top: calc(50% + (50vh - 50vw) - 2vw);
+  }
+
+}
+
+
+/* Custom scrollbar colours and unrounded corners */
+*::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background-color: #c5dfde83;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: #175c1ca8;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #62A34B;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #62A34B;
+}
+
+/* Custom font */
+@font-face {
+  font-family: undertale;
+  src: url(../font/font.ttf);
+}
+
+/* Vignette Animation */
+@keyframes vignette {
+  0% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0);
+  }
+
+  10% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.08);
+  }
+
+  20% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.16);
+  }
+
+  30% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.24);
+  }
+
+  40% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.32);
+  }
+
+  50% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.40);
+  }
+
+  60% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.48);
+  }
+
+  70% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.56);
+  }
+
+  80% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.64);
+  }
+
+  90% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.72);
+  }
+
+  100% {
+    box-shadow: inset 0px 0px 240px rgba(0, 0, 0, 1);
+  }
+}
+
+/* Unvignette Animation */
+@keyframes unvig {
+  0% {
+    box-shadow: inset 0px 0px 240px rgba(0, 0, 0, 1);
+  }
+
+  10% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.72);
+  }
+
+  20% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.64);
+  }
+
+  30% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.56);
+  }
+
+  40% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.48);
+  }
+
+  50% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.40);
+  }
+
+  60% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.32);
+  }
+
+  70% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.24);
+  }
+
+  80% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.16);
+  }
+
+  90% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0.08);
+  }
+
+  100% {
+    box-shadow: inset 0px 0px 220px rgba(0, 0, 0, 0);
+  }
+}

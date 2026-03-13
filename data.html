@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Bata Dandit</title>
+
+  <!-- JS Links -->
+  <script src="js/play.js"></script>
+  <script src="js/people.js"></script>
+  <script src="js/data.js"></script>
+
+  <!-- CSS link -->
+  <link href="css/data.css" rel="stylesheet">
+  
+</head>
+
+<!-- Wait until page loads to set necessary variables -->
+<body onload="getName = document.getElementById('name'); peoples = document.getElementById('possibles');">
+
+  <!-- Home button -->
+  <button id="home" onclick="window.location.replace('index.html')"></button>
+
+  <!-- Add Human button -->
+  <button id="add" onclick="window.location.replace('add.html')"></button>
+
+  <!-- Previous and Next human buttons -->
+  <div id="back" onclick="back()"></div>
+  <div id="next" onclick="next()"></div>
+    
+  <!-- Main panel for choosing and viewing peoples data -->
+  <section id="data">
+
+    <!-- Human Name (search box)-->
+    <div id="name_box">
+      <input id="name" value="Fynn Bisschoff" oninput="search()" autofocus spellcheck="false">  
+    </div>
+    
+    <!-- Handy list of possible results -->
+    <div id="possibles">
+      Fynn
+    </div>
+
+    <!-- Table of human attributes to choose from -->
+    <section id="q_box">
+      <table id="question">
+        <tr onclick="show('LN', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Last Name
+          </th>
+        </tr>
+        <tr onclick="show('BD', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Birth Date
+          </th>
+        </tr>
+        <tr onclick="show('HC', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Hair Colour
+          </th>
+        </tr>
+        <tr onclick="show('EC', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Eye Colour
+          </th>
+        </tr>
+        <tr onclick="show('HT', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Height (ft)
+          </th>
+        </tr>
+        <tr onclick="show('SC', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Skin Colour
+          </th>
+        </tr>
+        <tr onclick="show('NS', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Number of Siblings
+          </th>
+        </tr>
+        <tr onclick="show('PR', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Parent Relationship
+          </th>
+        </tr>
+        <tr onclick="show('NG', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Number of Grandparents
+          </th>
+        </tr>
+        <tr onclick="show('BF', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Best Friend
+          </th>
+        </tr>
+        <tr onclick="show('IN', this.innerText, false)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Interests
+          </th>
+        </tr>
+        <tr onclick="show('GL', this.innerText, false)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Wears Glasses
+          </th>
+        </tr>
+        <tr onclick="show('SX', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Sex
+          </th>
+        </tr>
+        <tr onclick="show('AT', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Preferred Animal
+          </th>
+        </tr>
+        <tr onclick="show('SP', this.innerText, false)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Plays Sports
+          </th>
+        </tr>
+        <tr onclick="show('WS', this.innerText, false)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Wears Shorts
+          </th>
+        </tr>
+        <tr onclick="show('HR', this.innerText, true)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Hair Type
+          </th>
+        </tr>
+        <tr onclick="show('EA', this.innerText, false)" onmouseenter="play('audio/hover.wav')">
+          <th>
+            Ears Pierced
+          </th>
+        </tr>
+      </table>
+    </section>
+    
+    <!-- Actual human data -->
+    <section id="a_box">
+      <div id="info">Your human's Last Name is:</div>
+      <div id="answer">Bisschoff</div>
+    </section>
+  </section>
+
+</body>
+</html>

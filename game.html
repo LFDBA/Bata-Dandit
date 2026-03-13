@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bata Dandit</title>
+
+  <!-- CSS link -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- JS links -->
+  <script src="js/play.js"></script>
+  <script src="js/people.js"></script>
+  <script src="js/bf_alg.js"></script>
+  <script src="js/interests.js"></script>
+  <script src="js/main.js"></script>
+
+</head>
+
+<!-- Run setup function when page loads -->
+<body onload="setup()">
+  <div id="page">
+
+    <!-- Home Button -->
+    <button id="home"" onclick="window.location.replace('index.html')"></button>
+
+    <!-- Container for Question and Answers -->
+    <div id="interactions">
+
+      <!-- Answer Buttons -->
+      <section id="ans" onclick="if(qNum >16 || qNum < 14){play('audio/q' + (Math.round(Math.random(5))+1) + '.wav')}">
+
+        <!-- Yes Button -->
+        <div onmouseenter="play('audio/hover.wav')" onclick="answers[qNum] = 0; select = true" class="answer">
+          <img src="images/arrow.png" class="arrow" alt=">">
+          Yes
+        </div>
+
+        <!-- No Button -->
+        <div onmouseenter="play('audio/hover.wav')" onclick="if(failed == true){play('/audio/wrong.mp3')}; answers[qNum] = 1; select = true" class="answer">
+          <img src="images/arrow.png" class="arrow" alt=">">
+          No
+        </div>
+
+        <!-- Not Sure Button -->
+        <div onmouseenter="play('audio/hover.wav')" onclick="answers[qNum] = 2; select = true" class="answer">
+          <img src="images/arrow.png" class="arrow" alt=">">
+          I'm not sure
+        </div>
+
+        <!-- Probably Button -->
+        <div onmouseenter="play('audio/hover.wav')" onclick="answers[qNum] = 3; select = true" class="answer">
+          <img src="images/arrow.png" class="arrow" alt=">">
+          Probably
+        </div>
+
+        <!-- Probably Not Button -->
+        <div onmouseenter="play('audio/hover.wav')" onclick="answers[qNum] = 4; select = true" class="answer">
+          <img src="images/arrow.png" class="arrow" alt=">">
+          Probably not
+        </div>
+      </section>
+
+      <!-- Question background Button -->
+      <section id="query">
+
+        <!-- Question Button -->
+        <div id="question">
+          <img onclick="if(qNum != 17){back()}else{qNum = 1111}" id="back" src="images/back.webp" alt="back">
+
+          <!-- Question Text -->
+          <div id="quint">
+
+            <p id="jsquest" style="padding: 0px; margin: 0px;"></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Bandit Character -->
+    <section id="bandit"></section>
+  </div>
+</body>
+
+</html>

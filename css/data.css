@@ -1,0 +1,411 @@
+body {
+    /* Set Backround image */
+    background-image: url('../images/bg_data.png');
+    background-blend-mode: multiply;
+    background-size: auto 100%;
+    image-rendering: pixelated;
+    background-position: center;
+
+    /* Background flash animations */
+    animation: blink 1s;
+    animation-iteration-count: infinite;
+  
+    /* Body sizing and Positioning */
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+  
+    /* No Text select or image dragging :) */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+
+    /* Custom Font */
+    font-family: undertale;
+}
+
+
+/* Custom selection colours for aesthetic */
+::selection {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(0, 0, 0, 0.08);
+}
+
+
+
+/* Main Data selection and display container */
+#data {
+
+    /* Background Colour */
+    background-color: rgb(30, 70, 0, 0.98);
+
+    /* Custom Border */
+    border-style:ridge;
+    border-width: 1vh;
+    border-radius: 1vh;
+    border-color: black;
+
+    /* Positioning */
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    /* Size */
+    width: 70%;
+    height: 70%;
+}
+
+
+/* User data container */
+#a_box {
+
+    /* wrap text */
+    text-wrap: wrap;
+
+    /* Container positioning */
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+
+    /* sizing */
+    width: 83%;
+    height: 90%;
+
+    /* Scroll if needed */
+    overflow: auto;
+}
+
+/* Actual answer */
+#answer {
+    /* text size and position */
+    font-size: 9vh;
+    text-align: center;
+
+    /* container size */
+    width: 100%;
+}
+
+/* Question Header */
+#info {
+    /* Text sizing and positioning */
+    font-size: 5vh;
+    padding: 15vh 0 15vh 0;
+    text-align: center;
+
+    /* Container Size */
+    width: 100%;
+}
+
+
+/* Add Button */
+#add {
+    /* Positioning */
+    position: absolute;
+    right: 2vh;
+    top: 2vh;
+    z-index: 1;
+
+    /* Set Background */
+    background-image: url("../images/add.png");
+    border: white 3px solid;
+    border-radius: 100%;
+    background-color: rgba(100, 100, 125, 0.4);
+    image-rendering: pixelated;
+
+    /* Sizing */
+    width: 8vh;
+    height: 8vh;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 80%;
+
+    /* Animation speeds */
+    transition: width 0.2s, height 0.2s, margin 0.2s;
+}
+
+/* Add Button Hover Animation */
+#add:hover {
+    width: 10vh;
+    height: 10vh;
+    margin: -1vh 0vh;
+    cursor: pointer;
+}
+
+
+
+/* Home Button */
+#home {
+    /* Positioning */
+    position: absolute;
+    left: 2vh;
+    top: 2vh;
+    z-index: 1;
+
+    /* Set Background */
+    background-image: url("../images/home.png");
+    border: none; 
+    border-radius: 100%;
+    background-color: rgba(100, 100, 125, 0.4);
+    image-rendering: pixelated;
+
+    /* Sizing */
+    width: 8vh;
+    height: 8vh;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    /* Animation speeds */
+    transition: width 0.2s, height 0.2s, margin 0.2s;
+}
+
+/* Home Hover Animation */
+#home:hover {
+    width: 10vh;
+    height: 10vh;
+    margin: -1vh 1vh 1vh -1vh;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Next Human Button */
+#next {
+    /* Positioning */
+    position: absolute;
+    right: 10%;
+    top: calc(50% - 1.5vw);
+
+    /* Set Background */
+    background-image: url("../images/arrow.png");
+    background-size: 100%;
+    filter: invert(100%);
+
+    /* size */
+    width: 3vw;
+    height: 3vw;
+
+    /* animation speeds */
+    transition: transform 0.4s, width 0.4s, height 0.4s;
+}
+
+/* Next Human hover animation */
+#next:hover {
+    width: 4vw;
+    height: 4vw;
+    transform: translate(0.5vw, -0.5vw);
+}
+
+
+
+/* Previous human Button */
+#back {
+    /* Positioning */
+    position: absolute;
+    left: 10%;
+    top: calc(50% - 1.5vw);
+
+    /* Rotated so that I only need 1 arrow sprite */
+    rotate: 180deg;
+
+    /* Background setup */
+    background-image: url("../images/arrow.png");
+    background-size: 100%;
+    filter: invert(100%);
+
+    /* Size */
+    width: 3vw;
+    height: 3vw;
+
+    /* Animation speeds */
+    transition: transform 0.4s, width 0.4s, height 0.4s;
+}
+
+/* Previous Human hover animation */
+#back:hover {
+    width: 4vw;
+    height: 4vw;
+    transform: translate(0.5vw, +0.5vw);
+}
+
+
+
+
+/* Human name container */
+#name_box {
+    /* Background */
+    background-color: rgba(255, 255, 255, 0.3);
+
+    /* Position */
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+
+    /* sizing */
+    width: 100%;
+    height: 10%;
+
+    /* Bottom border/seperator */
+    border-color: aliceblue;
+    border-style: solid;
+    border-width: 0 0 4px 0;
+
+    /* Hide overflow */
+    overflow: hidden;
+}
+
+/* Name Input */
+#name {
+    /* No background */
+    background: none;
+
+    /* Size */
+    width: calc(100% - 4px);
+    height: 100%;
+
+    /* Positioning */
+    position: absolute;
+    bottom: -4px;
+
+    /* Text Size and position */
+    font-size: 5vh;
+    font-family: undertale;
+    text-align: center;
+
+    /* Place on top */
+    z-index: 5;
+
+    /* Get rid of standard input styling */
+    outline: none;
+    border: none;
+    
+    
+}
+
+/* Question table Container Container for positioning */
+#q_box {
+    /* Sizing */
+    width: 17%;
+    height: calc(90% - 4px);
+
+    /* Positioning */
+    position: absolute;
+    bottom: 0px;
+
+    /* Scroll if needed */
+    overflow: auto;
+}
+
+
+/* Question table container */
+#question {
+    /* Background colour */
+    background-color: rgba(175, 226, 179, 0.34);
+
+    /* Sizing and positioning */
+    width: 100%;
+    position: sticky;
+    bottom: 0px;
+}
+
+/* Question table and headers */
+table, th {
+    /* Text Size */
+    font-size: 2vh;
+
+    /* Border Customization */
+    border: solid rgb(0, 0, 0);
+    border-width: 2px 0 0 0;
+    border-collapse: collapse;
+
+    /* Animation speeds */
+    transition: font-size 0.2s;
+}
+
+/* Table headers */
+th {
+    /* Padding for visibility */
+    padding: 10px 0 10px 0;
+}
+
+/* Hover animation */
+th:hover {
+    font-size: 2.7vh;
+}
+
+
+
+/* Custom Scrollbar */
+*::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+}
+
+/* Scrollbar elements colours */
+*::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: #c5dfde83;
+}
+*::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2;
+}
+*::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+}
+*::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background-color: #175c1c73;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #62A34B;
+}
+*::-webkit-scrollbar-thumb:active {
+    background-color: #62A34B;
+}
+
+
+/* Background blink animation */
+@keyframes blink {
+    0% {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Name slide in/out animation */
+@keyframes slide-left {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: -85%;
+    }
+}
+
+/* Name slide in/out animation */
+@keyframes slide-right {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: 85%;
+    }
+}
+
+
+/* Custom font */
+@font-face {
+    font-family: undertale;
+    src: url(../font/font.ttf);
+  }

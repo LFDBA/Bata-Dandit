@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bata Dandit</title>
+
+  <!-- CSS link -->
+  <link href="css/intro.css" rel="stylesheet">
+
+  <!-- JS files -->
+  <script src="js/play.js"></script>
+  <script src="js/intro.js"></script>
+  
+</head>
+
+<body>
+
+  <!-- Home button -->
+  <button id="home" onclick="window.location.replace('index.html')"></button>
+
+  <!-- Main page content (seperated for styling purposes) -->
+  <div id="content">
+    
+    <!-- Bandit Character -->
+    <section id="bandit">
+      <!-- Buttons (attached to Bandit Character for styling purposes). Play random hover sounds when hovered -->
+      <!-- Yes -->
+      <button onmouseenter="play('audio/intro_opt_' + (Math.round(Math.random()*4)+1) + '.wav')" id="yes_box" onclick="yes()" alt="yes">
+        <img id="yes" src="images/yes.webp">
+      </button>
+
+      <!-- No -->
+      <button onmouseenter="play('audio/intro_opt_' + (Math.round(Math.random()*4)+1) + '.wav')" id="no_box" onclick="no()" alt="no">
+        <img id="no" src="images/no.webp">
+      </button>
+
+    </section>
+
+    <!-- text container (for padding purposes (weird)) -->
+    <section id="text">
+
+      <!-- Question Box (contains question obviously) -->
+      <div id="query_box">
+        <!-- Question (already contains question 1 so that you don't have to wait for js to load) -->
+        <p id="query">Hiya Traveller! Ya new here?</p>
+      </div>
+      
+    </section>
+
+
+  </div>
+
+</body>
+
+</html>
