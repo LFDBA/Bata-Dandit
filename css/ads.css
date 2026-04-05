@@ -1,0 +1,30 @@
+.ad-panel {
+  width: min(880px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 14px 16px 18px;
+  border: 3px solid #000;
+  background: rgba(33, 112, 31, 0.88);
+  box-sizing: border-box;
+}
+
+.ad-panel-inline {
+  width: 100%;
+  margin: 24px 0 0;
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+  background: transparent;
+}
+
+.ad-label {
+  margin: 0 0 12px;
+  color: #fff7b2;
+  font-family: undertale, sans-serif;
+  font-size: clamp(14px, 2vw, 22px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ad-slot {
+  min-height: 90px;
+}
